@@ -1,24 +1,38 @@
-# README
+# Traillo
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A showcase how to use Hotwired.
 
-Things you may want to cover:
+## Preconditions
 
-* Ruby version
+Have a redis server running.
 
-* System dependencies
+## Setup
 
-* Configuration
+```sh
+rails new traillo \
+  --database=sqlite3 \
+  --skip-action-mailer \
+  --skip-active-job \
+  --skip-jbuilder \
+  --css=tailwind
+```
 
-* Database creation
+```sh
+bin/rails action_text:install
+bundle
+bin/rails db:migrate
+```
 
-* Database initialization
+```sh
+bin/rails generate scaffold ListItem \
+  title:string \
+  description:rich_text \
+  list_position:integer
+bin/rails db:migrate
+```
 
-* How to run the test suite
+```sh
+bin/dev
+```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Open: http://localhost:3000/list_items
