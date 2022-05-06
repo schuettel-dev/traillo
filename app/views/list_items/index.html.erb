@@ -11,5 +11,7 @@
     <%= render @list_items %>
   </div>
 
-  <%= link_to 'New list item', new_list_item_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium text-center" %>
+  <%= turbo_frame_tag "new_list_item" do %>
+    <%= link_to 'New list item', new_list_item_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium text-center" %>
+  <% end %>
 </div>
