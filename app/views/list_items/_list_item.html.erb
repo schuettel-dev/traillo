@@ -1,0 +1,22 @@
+<div id="<%= dom_id list_item %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Title:</strong>
+    <%= list_item.title %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Description:</strong>
+    <%= list_item.description %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">List position:</strong>
+    <%= list_item.list_position %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this list item", list_item, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this list item', edit_list_item_path(list_item), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
