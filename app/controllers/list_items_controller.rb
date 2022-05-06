@@ -37,6 +37,7 @@ class ListItemsController < ApplicationController
   def update
     if @list_item.update(list_item_params)
       respond_to do |format|
+        format.turbo_stream
         format.html { redirect_to list_items_path, notice: "List item was successfully updated." }
       end
     else

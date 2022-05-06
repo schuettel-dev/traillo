@@ -1,0 +1,19 @@
+<%=
+  turbo_stream.replace(
+    ListItem.model_name.collection,
+    partial: "list_items/list_items",
+    locals: {
+      list_items: ListItem.ordered
+    }
+  )
+%>
+
+<%=
+  turbo_stream.replace(
+    @list_item,
+    partial: "list_items/list_item",
+    locals: {
+      list_item: @list_item
+    }
+  )
+%>
