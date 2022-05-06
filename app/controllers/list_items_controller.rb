@@ -45,7 +45,10 @@ class ListItemsController < ApplicationController
   # DELETE /list_items/1
   def destroy
     @list_item.destroy
-    redirect_to list_items_url, notice: "List item was successfully destroyed."
+
+    respond_to do |format|
+      format.html { redirect_to list_items_url, notice: "List item was successfully destroyed." }
+    end
   end
 
   private
