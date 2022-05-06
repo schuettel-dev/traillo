@@ -5,10 +5,11 @@
 
   <div class="flex justify-between items-center">
     <h1 class="font-bold text-4xl">List items</h1>
-    <%= link_to 'New list item', new_list_item_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
   <div id="list_items" class="min-w-full">
     <%= render @list_items %>
   </div>
+
+  <%= link_to 'New list item', new_list_item_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium text-center" %>
 </div>
