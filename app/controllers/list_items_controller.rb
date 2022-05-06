@@ -25,7 +25,8 @@ class ListItemsController < ApplicationController
 
     if @list_item.save
       respond_to do |format|
-        format.html  { redirect_to list_items_path, notice: "List item was successfully created." }
+        format.turbo_stream
+        format.html { redirect_to list_items_path, notice: "List item was successfully created." }
       end
     else
       render :new, status: :unprocessable_entity
