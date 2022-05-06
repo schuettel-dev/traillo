@@ -3,8 +3,11 @@
     <% list_items.each do |list_item| %>
       <div class="flex border shadow-lg p-2 bg-gray-50 rounded-lg">
         <%= turbo_frame_tag list_item, class: "min-w-full" do %>
-          <div class="flex justify-between">
-            <div><%= list_item.title %></div>
+          <div class="flex justify-between items-center">
+            <div class="flex items-center text-2xl gap-x-2">
+              <span class="text-gray-400 text-lg">#<%= list_item.list_position %></span>
+              <span><%= list_item.title %></span>
+            </div>
             <div><%= link_to "Show", list_item_path(list_item), class: "text-sky-700/50 hover:text-sky-700 transition" %></div>
           </div>
         <% end %>
