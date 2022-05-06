@@ -24,7 +24,7 @@ class ListItemsController < ApplicationController
     @list_item = ListItem.new(list_item_params)
 
     if @list_item.save
-      redirect_to @list_item, notice: "List item was successfully created."
+      redirect_to list_items_path, notice: "List item was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
