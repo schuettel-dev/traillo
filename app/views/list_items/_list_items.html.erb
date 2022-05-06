@@ -3,17 +3,7 @@
     <% list_items.each do |list_item| %>
       <div class="flex border shadow-lg p-4 bg-gray-50 rounded-lg">
         <%= turbo_frame_tag list_item, class: "min-w-full" do %>
-          <div class="flex justify-between items-center">
-            <div class="flex items-center text-2xl gap-x-2">
-              <span class="text-gray-400 text-lg">#<%= list_item.list_position %></span>
-              <span><%= list_item.title %></span>
-            </div>
-            <div class="flex gap-x-4">
-              <%= link_to "Show", list_item_path(list_item), class: "text-emerald-600/50 hover:text-emerald-600 transition" %>
-              <%= link_to "Edit", edit_list_item_path(list_item), class: "text-sky-700/50 hover:text-sky-700 transition" %>
-              <%= button_to "Delete", list_item_path(list_item), class: "text-red-500/30 hover:text-red-500 transition", method: :delete, form: { "data-turbo-confirm": "Are you sure?" } %>
-            </div>
-          </div>
+          <%= render list_item, header_only: true %>
         <% end %>
       </div>
     <% end %>
