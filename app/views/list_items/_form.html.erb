@@ -26,7 +26,8 @@
     <%= form.number_field :list_position, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-  <div class="inline">
+  <div class="flex gap-x-4 items-center">
     <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+    <%= link_to "Cancel", list_item, class: "text-gray-500 hover:text-black transition" %>
   </div>
 <% end %>
