@@ -3,7 +3,7 @@ class ListItemsController < ApplicationController
 
   # GET /list_items
   def index
-    @list_items = ListItem.all
+    @list_items = ListItem.ordered
   end
 
   # GET /list_items/1

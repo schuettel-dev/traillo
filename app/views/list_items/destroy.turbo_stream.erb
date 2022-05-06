@@ -3,7 +3,7 @@
     ListItem.model_name.collection, # => "list_items", the same identifier as used for turbo-frame in `_list_items.html.erb`
     partial: "list_items/list_items",
     locals: {
-      list_items: ListItem.all
+      list_items: ListItem.ordered
     }
   )
 %>
