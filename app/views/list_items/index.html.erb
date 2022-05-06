@@ -7,6 +7,7 @@
     <h1 class="font-bold text-4xl">List items</h1>
   </div>
 
+  <%= turbo_stream_from 'funky_list_items' %>
   <%= render "list_items", list_items: @list_items %>
 
   <%= turbo_frame_tag ListItem.new do %>
