@@ -1,20 +1,23 @@
-<div class="flex flex-col">
+<div class="flex flex-col" data-controller="toggle">
   <div class="flex justify-between items-center">
     <div class="flex items-center text-2xl gap-x-2">
       <span class="text-gray-400 text-lg">#<%= list_item.list_position %></span>
       <span><%= list_item.title %></span>
     </div>
     <div class="flex gap-x-4">
-      <%= link_to "Close", list_items_path, class: "text-sky-700/50 hover:text-sky-700 transition" %>
-
-      <%= link_to "Show", list_item_path(list_item), class: "text-emerald-600/50 hover:text-emerald-600 transition" %>
+      <div class="hidden" data-toggle-target="actionButtons">
+        <div class="flex gap-x-4">
+          <%= button_tag "Close", class: "hidden text-sky-700/50 hover:text-sky-700 transition", "data-toggle-target": "closeButton", "data-action": "toggle#close" %>
+          <%= button_tag "Show", class: "text-emerald-600/50 hover:text-emerald-600 transition", "data-toggle-target": "showButton", "data-action": "toggle#show" %>
+        </div>
+      </div>
 
       <%= link_to "Edit", edit_list_item_path(list_item), class: "text-sky-700/50 hover:text-sky-700 transition" %>
       <%= button_to "Delete", list_item_path(list_item), class: "text-red-500/30 hover:text-red-500 transition", method: :delete, form: { "data-turbo-confirm": "Are you sure?" } %>
     </div>
   </div>
 
-  <div>
+  <div data-toggle-target="toggleable">
     <p class="my-4 text-lg">
       <%= list_item.description %>
     </p>
