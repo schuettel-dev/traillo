@@ -3,7 +3,7 @@
     <% list_items.each do |list_item| %>
       <div class="flex border shadow-lg p-4 bg-gray-50 rounded-lg">
         <%= turbo_frame_tag list_item, class: "min-w-full" do %>
-          <%= render list_item, header_only: true %>
+          <%= render list_item %>
         <% end %>
       </div>
     <% end %>
